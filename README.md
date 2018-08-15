@@ -59,7 +59,7 @@ import objectArrayTools from 'object-arrarify';
     var result=obj.map((key,value,index) => {
       return key;
   });
-    // Result will be: {a:"a",b:"b",c:"c",d:"d"}
+    // result will be: {a:"a",b:"b",c:"c",d:"d",...the arrayTools methods}
     ```   
     * Filter usage
     ```js
@@ -67,9 +67,31 @@ import objectArrayTools from 'object-arrarify';
     var result=obj.filter((key,value,index) => {
       return key=="a";
   });
-    // Result will be: {a:"1"}
+    // result will be: {a:"1" ,...the arrayTools methods}
     ```  
-    
+    * toNormalObject usage
+    ```js
+         // Declare the object
+    var result=obj.toNormalObject();
+    // result will be: the original object, without the methods which were applied by the objectArrayTools.
+    ```      
+     * Real world use example and the reason this module was created in the first place.
+     ```js
+          // Declare the object
+     var result=obj
+                  // Perform some filtering logic
+                  .filter((key,value,index) => {
+                          return key=="a";
+                      })
+                  //  Perform some value mapping logic 
+                  .map((key,value,index) => {
+                          return key;
+                      })
+                  // Convert to an ordinary object without the arrayTools methods which might conflict with other object related tools/code.  
+                    .toNormalObject();
+     // result will be: {a:"a", (NO ARRAYTOOLS METHODS)}
+     ```      
+   
 Other examples are omitted becaus the use is pretty much obvious and in par with the usage of ordinary array functions, including find and forEach, feel free to make a pull request with a more detailed readme.
 
 ## License
