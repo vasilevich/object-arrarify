@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/object-arrarify.svg)](https://www.npmjs.com/package/object-arrarify)
 # object-arrarify
 
-A npm module which converts an ordinary object into an object with various methods which naively are found within an Array,    
+A npm module which converts an ordinary object into an object with various methods which natively are found within an Array,    
 such as map, filter, find, forEach, and more, all behave similar to the native array version however, instead of index,    
 it provides key(second param), and index(third param).
 
@@ -16,11 +16,9 @@ so you will have to re-apply the module into inner objects if you wish to perfor
 ## Usage and examples
 
 * Install.   
-     * Yarn:
 ```bash
 yarn add object-arrarify
 ```
-     * Npm:
 ```bash
 npm install object-arrarify
 ```
