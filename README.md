@@ -12,6 +12,9 @@ and thus achieving the desired Declarative Programming pattern which is arguably
 NOTE:
 the methods are working shallowly, aka, they do not get applied into the inner objects recursively,
 so you will have to re-apply the module into inner objects if you wish to perform operations on them as-well which is out of the scope of this module but can be done regardless.
+or you can use the sister of this module(which uses this very module internally) and works recursively.   
+if you need recursive deep behavior please visit:   
+https://github.com/vasilevich/object-arrarify-deep
 
 ## Usage and examples
 
@@ -59,6 +62,14 @@ import objectArrayTools from 'object-arrarify';
   });
     // result will be: {a:"a",b:"b",c:"c",d:"d",...the arrayTools methods}
     ```   
+    * Map Keys usage
+    ```js
+         // Declare the object
+    var result=obj.mapKeys((key,value,index) => {
+      return "test1"+key+"test2";
+  });
+    // result will be: {test1atest2:"1",test1btest2:"2",test1ctest2:"3",test1dtest2:"hello",...the arrayTools methods}
+    ```   
     * Filter usage
     ```js
          // Declare the object
@@ -85,12 +96,15 @@ import objectArrayTools from 'object-arrarify';
                   .map((key,value,index) => {
                           return key;
                       })
+                  .mapKeys((key,value,index) => {
+                          return "test1"+key+"test2";
+                      })
                   // Convert to an ordinary object without the arrayTools methods which might conflict with other object related tools/code.  
                     .toNormalObject();
-     // result will be: {a:"a", (NO ARRAYTOOLS METHODS)}
+     // result will be: {test1atest2:"a", (NO ARRAYTOOLS METHODS)}
      ```      
    
-Other examples are omitted becaus the use is pretty much obvious and in par with the usage of ordinary array functions, including find and forEach, feel free to make a pull request with a more detailed readme.
+Other examples are omitted because the use is pretty much obvious and in par with the usage of ordinary array functions, just look at index.ts to see all the available methods or use type completion in your ide, including find and forEach, feel free to make a pull request with a more detailed readme.
 
 ## License
 The license chosen for this project can be found inside package.json: MIT

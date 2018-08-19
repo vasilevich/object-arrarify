@@ -1,7 +1,7 @@
 {
   "name": "object-arrarify",
-  "version": "1.0.1",
-  "description": "A npm module which converts an ordinary object into an object with various tools which naively are found within an array, such as map, filter, find, forEach, and more, all behave similar to the native array version however, instead of index, it provides key, AND index(third param).",
+  "version": "1.0.2",
+  "description": "A npm module which converts an ordinary object into an object with various tools which natively are found within an array, such as map, filter, find, forEach, and more, all behave similar to the native array version however, instead of index, it provides key, AND index(third param).",
   "main": "js/index.js",
   "typings": "js/index",
   "scripts": {
