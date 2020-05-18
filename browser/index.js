@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -7,7 +6,6 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var objectArrayToolsfunctions = function (inputObject) {
     if (inputObject === void 0) { inputObject = {}; }
     return ({
@@ -97,5 +95,3 @@ var objectArrayTools = function (input) {
     }
     return newInput;
 };
-exports.default = objectArrayTools;
-//# sourceMappingURL=index.js.map

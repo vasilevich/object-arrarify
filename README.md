@@ -57,7 +57,7 @@ import objectArrayTools from 'object-arrarify';
     * Map usage
     ```js
          // Declare the object
-    var result=obj.map((key,value,index) => {
+    var result=obj.map((value,key,index) => {
       return key;
   });
     // result will be: {a:"a",b:"b",c:"c",d:"d",...the arrayTools methods}
@@ -65,7 +65,7 @@ import objectArrayTools from 'object-arrarify';
     * Map Keys usage
     ```js
          // Declare the object
-    var result=obj.mapKeys((key,value,index) => {
+    var result=obj.mapKeys((value,key,index) => {
       return "test1"+key+"test2";
   });
     // result will be: {test1atest2:"1",test1btest2:"2",test1ctest2:"3",test1dtest2:"hello",...the arrayTools methods}
@@ -73,11 +73,19 @@ import objectArrayTools from 'object-arrarify';
     * Filter usage
     ```js
          // Declare the object
-    var result=obj.filter((key,value,index) => {
+    var result=obj.filter((value,key,index) => {
       return key=="a";
   });
     // result will be: {a:"1" ,...the arrayTools methods}
     ```  
+    * mapToArray usage
+        ```js
+             // Declare the object
+        var result=obj.mapToArray((value,key,index) => {
+          return value;
+      });
+        // result will be: normal array: ["a","b","c",...(all the values in the object)].
+        ```
     * toNormalObject usage
     ```js
          // Declare the object
@@ -89,14 +97,14 @@ import objectArrayTools from 'object-arrarify';
           // Declare the object
      var result=obj
                   // Perform some filtering logic
-                  .filter((key,value,index) => {
+                  .filter((value,key,index) => {
                           return key=="a";
                       })
                   //  Perform some value mapping logic 
-                  .map((key,value,index) => {
+                  .map((value,key,index) => {
                           return key;
                       })
-                  .mapKeys((key,value,index) => {
+                  .mapKeys((value,key,index) => {
                           return "test1"+key+"test2";
                       })
                   // Convert to an ordinary object without the arrayTools methods which might conflict with other object related tools/code.  

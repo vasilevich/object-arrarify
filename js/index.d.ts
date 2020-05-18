@@ -43,6 +43,13 @@ export interface IObjectArrayTools<T = any> {
      */
     forEach: (value?: T, key?: string, index?: number) => void;
     /**
+     * Map the object to a normal array, similar to array map however maps object values/keys.
+     * @param value
+     * @param key
+     * @param index
+     */
+    mapToArray: (value?: T, key?: string, index?: number) => Array<T>;
+    /**
      * Convert the ObjectTools array back into a native ordinary object without the added functions stated above.
      */
     toNormalObject: () => any;

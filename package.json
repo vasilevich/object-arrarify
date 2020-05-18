@@ -6,7 +6,7 @@
   "typings": "js/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf -R js && tsc",
+    "build": "rimraf -R js &&rimraf -R dist && tsc && tsc -p tsconfig.browser.json&& node build-browser.js",
     "prepare": "npm run build"
   },
   "repository": {
@@ -14,8 +14,8 @@
     "url": "git+https://github.com/vasilevich/object-arrarify.git"
   },
   "devDependencies": {
-    "typescript": "^2.9.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "typescript": "^2.9.1"
   },
   "keywords": [
     "typescript",
@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/vasilevich/object-arrarify/issues"
   },
-  "homepage": "https://github.com/vasilevich/object-arrarify#readme"
+  "homepage": "https://github.com/vasilevich/object-arrarify#readme",
+  "dependencies": {
+    "uglify-js": "^3.9.3"
+  }
 }
